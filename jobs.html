@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse Jobs — Ascend Staffing</title>
+  <meta name="description" content="Browse current IT job openings with Ascend Staffing. Filter by location, technology, experience level and job type.">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="header"></div>
+  <div id="navbar"></div>
+
+  <!-- ========================= PAGE HERO ========================= -->
+  <section class="page-hero">
+    <div class="container">
+      <nav aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html">Home</a></li><li class="breadcrumb-item active" aria-current="page">Browse Jobs</li></ol></nav>
+      <h1>Browse Open Positions</h1>
+      <p>Explore roles across technology, delivered by recruiters who know the market.</p>
+    </div>
+  </section>
+
+  <!-- ========================= JOB LISTING ========================= -->
+  <section class="section">
+    <div class="container">
+
+      <!-- Filter bar -->
+      <div class="filter-bar">
+        <div class="row g-3 align-items-end">
+          <div class="col-lg-4">
+            <label class="form-label" for="filterSearch">Search</label>
+            <input type="text" id="filterSearch" class="form-control" placeholder="Job title, skill, or company…">
+          </div>
+          <div class="col-6 col-md-3 col-lg-2">
+            <label class="form-label" for="filterLocation">Location</label>
+            <select id="filterLocation" class="form-select">
+              <option value="all">All Locations</option>
+              <option value="new-york">New York</option>
+              <option value="austin">Austin</option>
+              <option value="chicago">Chicago</option>
+              <option value="seattle">Seattle</option>
+              <option value="remote">Remote</option>
+            </select>
+          </div>
+          <div class="col-6 col-md-3 col-lg-2">
+            <label class="form-label" for="filterTech">Technology</label>
+            <select id="filterTech" class="form-select">
+              <option value="all">All Tech</option>
+              <option value="frontend">Frontend</option>
+              <option value="backend">Backend</option>
+              <option value="devops">DevOps</option>
+              <option value="data">Data &amp; AI</option>
+              <option value="cloud">Cloud</option>
+              <option value="security">Security</option>
+            </select>
+          </div>
+          <div class="col-6 col-md-3 col-lg-2">
+            <label class="form-label" for="filterExperience">Experience</label>
+            <select id="filterExperience" class="form-select">
+              <option value="all">Any Level</option>
+              <option value="entry">Entry (0–2 yrs)</option>
+              <option value="mid">Mid (3–5 yrs)</option>
+              <option value="senior">Senior (5–8 yrs)</option>
+              <option value="lead">Lead (8+ yrs)</option>
+            </select>
+          </div>
+          <div class="col-6 col-md-3 col-lg-2">
+            <label class="form-label" for="filterType">Job Type</label>
+            <select id="filterType" class="form-select">
+              <option value="all">All Types</option>
+              <option value="full-time">Full-time</option>
+              <option value="contract">Contract</option>
+              <option value="permanent">Permanent</option>
+              <option value="remote">Remote</option>
+            </select>
+          </div>
+        </div>
+        <div class="filter-bar-bottom">
+          <p class="text-muted mb-0">Showing <strong id="resultCount">0</strong> position(s)</p>
+          <button type="button" id="resetFilters" class="btn btn-outline-navy btn-sm">Reset Filters</button>
+        </div>
+      </div>
+
+      <!-- Job grid -->
+      <div id="jobGrid" class="row g-4 mt-2">
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card-job job-item" data-search="senior software engineer java spring aws northwind" data-location="new-york" data-tech="backend" data-experience="senior" data-type="full-time">
+            <div class="job-top">
+              <div>
+                <h3 class="job-title">Senior Software Engineer</h3>
+                <span class="job-company">Northwind</span>
+              </div>
+              <span class="job-type-badge">Full-time</span>
+            </div>
+            <div class="job-meta">
+              <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> New York, NY</span>
+              <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg> 5+ yrs</span>
+            </div>
+            <div class="job-skills"><span class="skill-tag">Java</span><span class="skill-tag">Spring</span><span class="skill-tag">AWS</span></div>
+            <div class="card-foot"><span class="job-salary">$130k – $160k</span><a href="job-details.html" class="btn btn-royal btn-sm">Apply</a></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card-job job-item" data-search="frontend developer react typescript cloudharbor" data-location="remote" data-tech="frontend" data-experience="mid" data-type="full-time">
+            <div class="job-top">
+              <div>
+                <h3 class="job-title">Frontend Developer (React)</h3>
+                <span class="job-company">CloudHarbor</span>
+              </div>
+              <span class="job-type-badge">Full-time</span>
+            </div>
+            <div class="job-meta">
+              <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Remote (US)</span>
+              <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg> 3+ yrs</span>
+            </div>
+            <div class="job-skills"><span class="skill-tag">React</span><span class="skill-tag">TypeScript</span><span class="skill-tag">CSS</span></div>
+            <div class="card-foot"><span class="job-salary">$105k – $135k</span><a href="job-details.html" class="btn btn-royal btn-sm">Apply</a></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card-job job-item" data-search="devops engineer kubernetes terraform azure bluepeak" data-location="austin" data-tech="devops" data-experience="mid" data-type="contract">
+            <div class="job-top">
+              <div>
+                <h3 class="job-title">DevOps Engineer</h3>
+                <span class="job-company">BluePeak</span>
+              </div>
+              <span class="job-type-badge">Contract</span>
+            </div>
+            <div class="job-meta">
+              <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Austin, TX</span>
+              <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg> 4+ yrs</span>
+            </div>
+            <div class="job-skills"><span class="skill-tag">Kubernetes</span><span class="skill-tag">Terraform</span><span class="skill-tag">Azure</span></div>
+            <div class="card-foot"><span class="job-salary">$85 / hr</span><a href="job-details.html" class="btn btn-royal btn-sm">Apply</a></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card-job job-item" data-search="data engineer python spark etl datawise" data-location="chicago" data-tech="data" data-experience="mid" data-type="permanent">
+            <div class="job-top">
+              <div>
+                <h3 class="job-title">Data Engineer</h3>
+                <span class="job-company">DataWise</span>
+              </div>
+              <span class="job-type-badge">Permanent</span>
+            </div>
+            <div class="job-meta">
+              <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Chicago, IL</span>
+              <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg> 4+ yrs</span>
+            </div>
+            <div class="job-skills"><span class="skill-tag">Python</span><span class="skill-tag">Spark</span><span class="skill-tag">ETL</span></div>
+            <div class="card-foot"><span class="job-salary">$115k – $145k</span><a href="job-details.html" class="btn btn-royal btn-sm">Apply</a></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card-job job-item" data-search="cloud architect aws azure gcp meridian" data-location="seattle" data-tech="cloud" data-experience="lead" data-type="full-time">
+            <div class="job-top">
+              <div>
+                <h3 class="job-title">Cloud Solutions Architect</h3>
+                <span class="job-company">Meridian</span>
+              </div>
+              <span class="job-type-badge">Full-time</span>
+            </div>
+            <div class="job-meta">
+              <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Seattle, WA</span>
+              <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg> 8+ yrs</span>
+            </div>
+            <div class="job-skills"><span class="skill-tag">AWS</span><span class="skill-tag">Azure</span><span class="skill-tag">GCP</span></div>
+            <div class="card-foot"><span class="job-salary">$155k – $190k</span><a href="job-details.html" class="btn btn-royal btn-sm">Apply</a></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card-job job-item" data-search="cybersecurity analyst soc security corelink" data-location="new-york" data-tech="security" data-experience="mid" data-type="full-time">
+            <div class="job-top">
+              <div>
+                <h3 class="job-title">Cybersecurity Analyst</h3>
+                <span class="job-company">CoreLink</span>
+              </div>
+              <span class="job-type-badge">Full-time</span>
+            </div>
+            <div class="job-meta">
+              <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> New York, NY</span>
+              <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg> 3+ yrs</span>
+            </div>
+            <div class="job-skills"><span class="skill-tag">SOC</span><span class="skill-tag">SIEM</span><span class="skill-tag">NIST</span></div>
+            <div class="card-foot"><span class="job-salary">$100k – $130k</span><a href="job-details.html" class="btn btn-royal btn-sm">Apply</a></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card-job job-item" data-search="junior developer javascript react entry apex" data-location="remote" data-tech="frontend" data-experience="entry" data-type="remote">
+            <div class="job-top">
+              <div>
+                <h3 class="job-title">Junior Web Developer</h3>
+                <span class="job-company">Apex Systems</span>
+              </div>
+              <span class="job-type-badge">Remote</span>
+            </div>
+            <div class="job-meta">
+              <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Remote</span>
+              <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg> 0–2 yrs</span>
+            </div>
+            <div class="job-skills"><span class="skill-tag">JavaScript</span><span class="skill-tag">React</span><span class="skill-tag">HTML/CSS</span></div>
+            <div class="card-foot"><span class="job-salary">$60k – $80k</span><a href="job-details.html" class="btn btn-royal btn-sm">Apply</a></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card-job job-item" data-search="machine learning engineer python tensorflow data apex" data-location="austin" data-tech="data" data-experience="senior" data-type="full-time">
+            <div class="job-top">
+              <div>
+                <h3 class="job-title">Machine Learning Engineer</h3>
+                <span class="job-company">Apex Systems</span>
+              </div>
+              <span class="job-type-badge">Full-time</span>
+            </div>
+            <div class="job-meta">
+              <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Austin, TX</span>
+              <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg> 5+ yrs</span>
+            </div>
+            <div class="job-skills"><span class="skill-tag">Python</span><span class="skill-tag">TensorFlow</span><span class="skill-tag">MLOps</span></div>
+            <div class="card-foot"><span class="job-salary">$140k – $175k</span><a href="job-details.html" class="btn btn-royal btn-sm">Apply</a></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card-job job-item" data-search="qa automation engineer selenium cypress testing bluepeak" data-location="seattle" data-tech="backend" data-experience="mid" data-type="contract">
+            <div class="job-top">
+              <div>
+                <h3 class="job-title">QA Automation Engineer</h3>
+                <span class="job-company">BluePeak</span>
+              </div>
+              <span class="job-type-badge">Contract</span>
+            </div>
+            <div class="job-meta">
+              <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Seattle, WA</span>
+              <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg> 3+ yrs</span>
+            </div>
+            <div class="job-skills"><span class="skill-tag">Selenium</span><span class="skill-tag">Cypress</span><span class="skill-tag">CI/CD</span></div>
+            <div class="card-foot"><span class="job-salary">$65 / hr</span><a href="job-details.html" class="btn btn-royal btn-sm">Apply</a></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="noResults" class="no-results text-center" style="display:none;">
+        <div class="icon-badge mx-auto mb-3"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
+        <h4>No matching jobs found</h4>
+        <p class="text-muted">Try adjusting your filters or search keywords.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================= CTA ========================= -->
+  <section class="section section-soft">
+    <div class="container">
+      <div class="cta-panel text-center">
+        <h2>Don't See Your Role?</h2>
+        <p class="mx-auto">We're always adding new opportunities. Submit your resume and we'll match you as roles open.</p>
+        <div class="cta-actions">
+          <a href="candidates.html#submit-resume" class="btn btn-royal btn-lg">Submit Resume</a>
+          <a href="contact.html" class="btn btn-outline-navy btn-lg">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer"></div>
+
+  <script src="assets/jquery/jquery.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
